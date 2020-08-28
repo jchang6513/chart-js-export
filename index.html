@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chart.js download</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+  </head>
+  <body>
+    <canvas id="lineChart"></canvas>
+    <br>
+    <br>
+    <button id="randomizeData">Randomize Data</button>
+    <button id="addDataset">Add Dataset</button>
+    <button id="removeDataset">Remove Dataset</button>
+    <button id="addData">Add Data</button>
+    <button id="removeData">Remove Data</button>
+
+    <a
+      id="download"
+      download="ChartImage.jpg"
+      href=""
+    >
+      <i class="fa fa-download">Download</i>
+    </a>
+
+    <script src="./assets/pluginService.js"></script>
+    <script src="./assets/lineChart.js"></script>
+
+    <script>
+      //Download Chart Image
+      document.getElementById("download").addEventListener('click', function(){
+        /*Get image of canvas element*/
+        var url_base64jp = document.getElementById("lineChart").toDataURL("image/jpg");
+        /*get download button (tag: <a></a>) */
+        var a =  document.getElementById("download");
+        /*insert chart image url to download button (tag: <a></a>) */
+        a.href = url_base64jp;
+      });
+    </script>
+  </body>
+</html>
