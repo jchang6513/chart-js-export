@@ -15,27 +15,17 @@
     <button id="addData">Add Data</button>
     <button id="removeData">Remove Data</button>
 
-    <a
-      id="download"
-      download="ChartImage.jpg"
-      href=""
-    >
+    <select id="image-type" onchange="setImageType()">
+      <option value="png">png</option>
+      <option value="jpeg">jpeg</option>
+      <option value="svg">svg</option>
+    </select>
+    <a id="download" href="">
       <i class="fa fa-download">Download</i>
     </a>
 
     <script src="./assets/pluginService.js"></script>
     <script src="./assets/lineChart.js"></script>
-
-    <script>
-      //Download Chart Image
-      document.getElementById("download").addEventListener('click', function(){
-        /*Get image of canvas element*/
-        var url_base64jp = document.getElementById("lineChart").toDataURL("image/jpg");
-        /*get download button (tag: <a></a>) */
-        var a =  document.getElementById("download");
-        /*insert chart image url to download button (tag: <a></a>) */
-        a.href = url_base64jp;
-      });
-    </script>
+    <script src="./assets/imageExport.js"></script>
   </body>
 </html>
