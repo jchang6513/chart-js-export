@@ -73,7 +73,6 @@ window.onload = function() {
   var canvas = document.getElementById('lineChart');
   var ctx = canvas.getContext('2d');
   window.myLine = new Chart(ctx, config);
-
 };
 
 document.getElementById('randomizeData').addEventListener('click', function() {

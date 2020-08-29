@@ -4,6 +4,7 @@
     <title>Chart.js download</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="https://unpkg.com/jspdf@2.1.0/dist/jspdf.umd.min.js"></script>
   </head>
   <body>
     <canvas id="lineChart"></canvas>
@@ -15,12 +16,13 @@
     <button id="addData">Add Data</button>
     <button id="removeData">Remove Data</button>
 
-    <select id="image-type" onchange="setImageType()">
+    <select id="image-type">
       <option value="png">png</option>
       <option value="jpeg">jpeg</option>
-      <option value="svg">svg</option>
+      <option value="webp">webp</option>
+      <option value="pdf">pdf</option>
     </select>
-    <a id="download" href="">
+    <a id="download" href="#">
       <i class="fa fa-download">Download</i>
     </a>
 
