@@ -4,7 +4,7 @@ var config = {
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [{
-      label: 'My First dataset',
+      label: 'Dataset 0',
       backgroundColor: window.chartColors.red,
       borderColor: window.chartColors.red,
       data: [
@@ -18,7 +18,7 @@ var config = {
       ],
       fill: false,
     }, {
-      label: 'My Second dataset',
+      label: 'Dataset 1',
       fill: false,
       backgroundColor: window.chartColors.blue,
       borderColor: window.chartColors.blue,
@@ -37,7 +37,8 @@ var config = {
     responsive: true,
     title: {
       display: true,
-      text: 'Chart.js Line Chart'
+      text: 'Chart Export Example',
+      fontSize: 24,
     },
     tooltips: {
       mode: 'index',

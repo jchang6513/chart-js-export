@@ -41,7 +41,26 @@ function chartExport(chartId, type) {
   }
 }
 
-document.getElementById("download").addEventListener('click', function(){
-  var imageType = document.getElementById('image-type').value;
-  chartExport("lineChart", imageType)
-});
+(function() {
+  var downloadBtn = document.getElementById("download");
+
+  function disabledDownload() {
+    downloadBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';
+    downloadBtn.disabled = true;
+  }
+
+  function enableDownload() {
+    downloadBtn.innerHTML = 'Download';
+    downloadBtn.disabled = false;
+  }
+
+  downloadBtn.addEventListener('click', function(e){
+    var imageType = document.getElementById('image-type').value;
+    disabledDownload();
+
+    setTimeout(() => {
+      chartExport("lineChart", imageType)
+      enableDownload()
+    }, 300)
+  });
+})()

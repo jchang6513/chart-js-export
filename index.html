@@ -5,27 +5,36 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="https://unpkg.com/jspdf@2.1.0/dist/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-    <canvas id="lineChart"></canvas>
-    <br>
-    <br>
-    <button id="randomizeData">Randomize Data</button>
-    <button id="addDataset">Add Dataset</button>
-    <button id="removeDataset">Remove Dataset</button>
-    <button id="addData">Add Data</button>
-    <button id="removeData">Remove Data</button>
-
-    <select id="image-type">
-      <option value="png">png</option>
-      <option value="jpeg">jpeg</option>
-      <option value="webp">webp</option>
-      <option value="pdf">pdf</option>
-    </select>
-    <a id="download" href="#">
-      <i class="fa fa-download">Download</i>
-    </a>
-
+    <div class="container">
+      <canvas id="lineChart"></canvas>
+      <br>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-9 center-block text-left">
+            <button id="randomizeData" class="btn btn-secondary">Randomize Data</button>
+            <button id="addDataset" class="btn btn-secondary">Add Dataset</button>
+            <button id="removeDataset" class="btn btn-secondary">Remove Dataset</button>
+            <button id="addData" class="btn btn-secondary">Add Data</button>
+            <button id="removeData" class="btn btn-secondary">Remove Data</button>
+          </div>
+          <div class="col-3 d-flex justify-content-end">
+            <div class="col-6">
+              <select id="image-type" class="form-control ">
+                <option value="png">PNG</option>
+                <option value="jpeg">JPEG</option>
+                <option value="webp">WebP</option>
+                <option value="pdf">PDF</option>
+              </select>
+            </div>
+            <button id="download" class="btn btn-primary" href="#" style="width: 100px; text-align: center;">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./assets/pluginService.js"></script>
     <script src="./assets/lineChart.js"></script>
     <script src="./assets/imageExport.js"></script>
